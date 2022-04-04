@@ -1,4 +1,4 @@
-// Copyright (c) 2022 wm8
+// Copyright 2022 vlada2003
 #include <chrono>
 #include <ctime>
 #include <cstdint>

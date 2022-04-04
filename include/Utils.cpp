@@ -1,10 +1,9 @@
-// Copyright (c) 2022 wm8
+// Copyright 2022 vlada2003
 #include "Utils.h"
 #include "SHA256.h"
 void Terminate(int exit_code)
 {
   Program::instance()->SaveData();
-
   BOOST_LOG_TRIVIAL(info) << "exit code: " << exit_code;
   Program::instance()->terminated = true;
   BOOST_LOG_TRIVIAL(info) << "terminated: "
@@ -56,7 +55,6 @@ void task(unsigned int thread_id)
   auto p = Program::instance();
   SHA256 sha256;
   Randomizer rand(thread_id);
-  auto _p = Program::instance();
   while (!p->terminated) {
     auto word = rand.get();
     string hash = sha256(word);
@@ -70,7 +68,7 @@ void task(unsigned int thread_id)
                            p1.time_since_epoch()).count();
         j["hash"] = hash;
         j["data"] = word;
-        _p->shas.push_back(j);
+        p->shas.push_back(j);
         BOOST_LOG_TRIVIAL(info) << "thread "<< thread_id
         << " FOUND! word: " << word << " hash: " << hash;
     }

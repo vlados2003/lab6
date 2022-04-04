@@ -1,4 +1,4 @@
-// Copyright (c) 2022 wm8
+// Copyright 2022 vlada2003
 #ifndef LAB6_RANDOMIZER_H
 #define LAB6_RANDOMIZER_H
 #include <random>

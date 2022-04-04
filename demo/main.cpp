@@ -1,4 +1,4 @@
-// Copyright (c) 2022 wm8
+// Copyright 2022 vlada2003
 #include <iostream>
 #include <signal.h>
 #include "Program.h"
@@ -17,7 +17,5 @@ int main(int argc, char** argv) {
   signal(SIGINT, Terminate);
   for(unsigned int i=0; i != _p->M; i++)
     _p->threads[i].join();
-
-
   return EXIT_SUCCESS;
 }
