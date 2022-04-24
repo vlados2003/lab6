@@ -49,7 +49,8 @@ void task(unsigned int thread_id) {
   auto p = Program::instance();
   SHA256 sha256;
   Randomizer rand(thread_id);
-  while (!p->terminated) {
+  while (!p->terminated)
+  {
     auto word = rand.get();
     string hash = sha256(word);
     BOOST_LOG_TRIVIAL(trace)
