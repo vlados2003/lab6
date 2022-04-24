@@ -11,10 +11,10 @@ class Randomizer {
 
  private:
   unsigned int id;
-  const char* characters
-      = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  const int cc=62;
-  const int maxl=16;
+  const char* characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  const int cc = 62;
+  const int maxl = 16;
   std::seed_seq* seed;
 };
 
